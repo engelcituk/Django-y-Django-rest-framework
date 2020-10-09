@@ -36,5 +36,8 @@ si se desea ejecutar el servidor en otro puerto
 	python manage.py runserver 7000
 
 donde 7000 es el puerto definido, ya que por default ocupa 8000
+Al separar el archivo setting en archivos para  base,localy prod al levantar el servidor se hace como:
+	
+	python manage.py runserver 7000 --settings=empleados.settings.local
 
 
