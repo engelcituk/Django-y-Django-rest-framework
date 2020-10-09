@@ -1,0 +1,40 @@
+Creamos el entorno donde *prueba* es la carpeta que se genera y prueba sería el entorno
+
+	python -m venv prueba
+
+activamos ese entorno-> en la terminal e ir poniendo lo siguiente
+
+	cd prueba
+	cd Scripts
+	activate
+
+cuando se activa el entorno se puede usar el gestor de paquetes, en este caso el gestor llamado pip, nos ubicamos en
+la raiz, para instalar django en nuestro entorno virtual, tipeamos
+
+	pip install django
+
+siempre tener activado el entorno al momento de instalar cualquier paquete. Para corroborar que django y el entorno
+estén funcionando bien
+
+	pip freeze --local 
+
+al instalar django trae unos paquetes por defecto pytz==2020.1 y sqlparse==0.4.1,
+hasta este punto solo se ha instalado django, sigue crear un proyecto web 
+
+para crear un proyecto hay que ir a la carpeta base, en este caso la carpeta base se llama python,
+tener en cuenta que siempre hay que tener el entorno corriendo,  escribir
+
+	django-admin startproject proyecto1
+
+donde proyecto1 es nombre del proyecto, entramos en el directorio del proyecto creado
+
+	cd proyecto1 
+	python manage.py runserver
+
+si se desea ejecutar el servidor en otro puerto 
+
+	python manage.py runserver 7000
+
+donde 7000 es el puerto definido, ya que por default ocupa 8000
+
+
