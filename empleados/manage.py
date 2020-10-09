@@ -6,7 +6,9 @@ import sys
 
 def main():
     """Run administrative tasks."""
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'empleados.settings')
+    # os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'empleados.settings') #seetings anterior
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'empleados.settings.local')  #seetings nuevo apuntando a nuestros settings modulado, que se debe de editar al subir a produccion 
+
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

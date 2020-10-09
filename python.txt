@@ -40,4 +40,12 @@ Al separar el archivo setting en archivos para  base,localy prod al levantar el 
 	
 	python manage.py runserver 7000 --settings=empleados.settings.local
 
+Si no se desee poner todo el --settings=empleados.settings.local al levantar el entorno, se puede modificar el
+archivo manage.py e indicar esa configuracion 
 
+estando en C:\Users\ecituk\Documents\python\empleados\applications> podemos crear apps
+la carpeta applications es una carpeta creada recientemente
+
+	django-admin startapp departamento
+
+donde departamento es el nombre de la app
