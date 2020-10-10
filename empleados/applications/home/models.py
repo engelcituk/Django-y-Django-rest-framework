@@ -7,4 +7,4 @@ class Prueba(models.Model):
     cantidad = models.IntegerField()
 
     def __str__(self):
-        return self.titulo
+        return self.titulo + ' ' + self.subtitulo #aparentemente solo regresa titulo mas subtitulo, pero desde nuestro template se puede acceder a todo el modelo
