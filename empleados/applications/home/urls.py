@@ -5,4 +5,6 @@ from . import views  # con el . se indica que está en el mismo nivel de la carp
 
 urlpatterns = [
     path('prueba/', views.PruebaView.as_view() ),
+    path('lista/', views.PruebaListView.as_view() ),
+
 ]
