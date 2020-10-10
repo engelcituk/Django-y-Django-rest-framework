@@ -19,7 +19,9 @@ from django.urls import path, re_path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     # incluimos los url de la app departamento, persona
-    re_path('',include('applications.departamento.urls')),
-    re_path('',include('applications.persona.urls'))
+    re_path('', include('applications.departamento.urls')),
+    re_path('', include('applications.persona.urls')),
+    re_path('', include('applications.home.urls'))
+
 
 ]
