@@ -8,4 +8,4 @@ class Departamento(models.Model):
     anulate = models.BooleanField('Anulado',default=False)#Anulado, asi lo verá el admin de django y por defecto falso
 
     def __str__(self):
-        return self.id + ' ' self.name + ' ' + self.shor_name 
+        return self.id + '-' + self.name + ' ' + self.shor_name 
