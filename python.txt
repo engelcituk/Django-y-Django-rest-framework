@@ -87,3 +87,31 @@ en postgress al pedir contraseña para el superusuario
 el puerto 5432
 
 
+Al abrir el sql shell de postgress se le da enter a los comando, hasta llegar a la parte que pide a contraseña
+	 ecituk
+
+y luego para crear la base de datos, se escribe el comando sql como la siguiente:
+	 CREATE DATABASE dbempleado;
+
+Ahora necesitamos un usuario que tenga permisos para modificar esta base de datos creada,
+ para ello si aún no tenemos un usuario creado, lo creamos con:
+
+    CREATE USER ecitukUser
+
+Ahora que tenemos el usuario, debemos acceder a la base de datos que hemos creado 
+y darle permisos a este usuario para que pueda modificar la Base De Datos, tipeamos
+
+	\c dbempleado;
+
+la consola dirá el mensaje:
+Ahora está conectado a la base de datos «dbempleado» con el usuario «postgres».
+dbempleado, seguimos dandole permisos al usuario con:
+	
+	ALTER ROLE ecitukUser WITH PASSWORD 'djangoapp';
+	ALTER ROLE cituk WITH PASSWORD 'djangoapp';
+
+Para lograr conectar desde django a Postgress
+
+empleado
+cituk
+djangoapp
