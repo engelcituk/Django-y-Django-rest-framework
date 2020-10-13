@@ -28,8 +28,6 @@ INSTALLED_APPS = [
     'applications.departamento',
     'applications.persona',
     'applications.home'
-
-
 ]
 
 MIDDLEWARE = [
