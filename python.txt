@@ -49,3 +49,34 @@ la carpeta applications es una carpeta creada recientemente
 	django-admin startapp departamento
 
 donde departamento es el nombre de la app
+
+Al tratar de instalar un paquete con pip y da el warning:
+
+WARNING: You are using pip version 20.1.1; however, version 20.2.3 is available.
+You should consider upgrading via the 
+'c:\users\ecituk\documents\python\entornos\empleados\scripts\python.exe -m pip install --upgrade pip' command.
+
+en la linea de comandos ejecutar y con ello se solventa el problema
+	
+	python -m pip install --upgrade pip
+
+
+puesto que se pretende mejorar el sistema de templates, se requiere el paquete unipath, se instala de la siguiente
+manera:
+
+	pip install unipath
+
+ejecuto migraciones al tener ya modelos creados
+
+	python manage.py makemigrations
+	python manage.py migrate
+
+para acceder al administrador de django primero se puede procedera crear un superusuario con 
+	
+	python manage.py createsuperuser
+
+el comando solicitará un nombre de usuario: ecituk
+correo: ecitukcaamal@gmail.com
+contraseña: 123456   que igual pedirá confirmar, puede que diga que la constraseña sea muy comun
+a lo ultimo se de da yes
+
