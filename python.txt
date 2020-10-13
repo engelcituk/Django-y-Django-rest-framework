@@ -66,7 +66,8 @@ manera:
 
 	pip install unipath
 
-ejecuto migraciones al tener ya modelos creados
+ejecuto migraciones al tener ya modelos creados, lo primero es para ver que todo lo que está en models esta correcto,
+
 
 	python manage.py makemigrations
 	python manage.py migrate
@@ -79,4 +80,10 @@ el comando solicitará un nombre de usuario: ecituk
 correo: ecitukcaamal@gmail.com
 contraseña: 123456   que igual pedirá confirmar, puede que diga que la constraseña sea muy comun
 a lo ultimo se de da yes
+
+
+en postgress al pedir contraseña para el superusuario
+	ecituk
+el puerto 5432
+
 
