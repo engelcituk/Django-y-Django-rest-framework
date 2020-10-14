@@ -11,9 +11,17 @@ class ListaEmpleados(ListView):
 class ListaEmpleadosPorArea(ListView):
     template_name = "empleado/listaPorArea.html"
     model = Empleado 
-    queryset = Empleado.objects.filter(
+    """ queryset = Empleado.objects.filter(
         departamento__shor_name = 'TICS' 
-    )
+    )"""
     context_object_name = 'empleados' 
+
+    def get_queryset(self):
+        
+        area = self.kwargs['area'] #para recoger la variable que se envia como parametro en la url-> empleadosporarea/<area>'
+        lista = Empleado.objects.filter(
+            departamento__shor_name = area #campoDelModeloEmpleadosConRelacionMuchosAmuchos____nombre_del_campo_del_modelo_relacionado_con_empleado
+        )
+        return lista
 
 
