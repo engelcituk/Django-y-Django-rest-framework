@@ -11,12 +11,17 @@ class EmpleadoAmin(admin.ModelAdmin):
         'last_name',
         'departamento',
         'job',
+        'full_name' #campo perzonalizado, no existe en el modelo, por lo que se debe crear una funcion que retorna el valor que se pretenda que muestre
     )
     #buscador por first_name last_name
     search_fields = (
         'first_name',
         'last_name',
     )
+    #Funcion para llenar el campo personalizado full_name 
+    def full_name(self, obj):
+        return obj.first_name + ' ' + obj.last_name
+
     #para agregar un filtro, en la tabla
     list_filter = ('job','habilidades',)
     #filtro horizontal, que sirve para los campos de relacion muchos a muchos, al registrar un empleado
