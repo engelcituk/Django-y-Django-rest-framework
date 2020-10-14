@@ -6,10 +6,12 @@
     <title>Prueba de list view</title>
 </head>
 <body>
-<h1>Lista de empleados por departamento</h1>    
-    {% for e in empleados %}
-        <li>{{ e}}---- {{ e.last_name}}</li>
-    {% endfor %}
+<h1>Lista de empleados por departamento</h1>   
+    <ul>        
+        {% for e in empleados %}
+            <li>{{ e}}---- {{ e.last_name}}</li>
+        {% endfor %}
+    </ul> 
         
 </body>
 </html>

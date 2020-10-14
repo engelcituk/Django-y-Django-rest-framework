@@ -24,4 +24,17 @@ class ListaEmpleadosPorArea(ListView):
         )
         return lista
 
+class ListaEmpleadosPorKword(ListView):
+    #lista de empleados por palabra clave
+    template_name = "empleado/porKword.html"
+    model = Empleado 
+    context_object_name = 'empleados'
 
+    def get_queryset(self):
+        #para filtrar en base a lo que se recibe desde una caja de texto
+        keyword = self.request.GET.get("kword", '')
+
+        lista = Empleado.objects.filter(
+            first_name = keyword 
+        )
+        return lista       

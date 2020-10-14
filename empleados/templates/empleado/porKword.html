@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de list view</title>
+</head>
+<body>
+<h1>Lista de empleados por caja de texto</h1>    
+    
+        <form method="get">
+            {% csrf_token %}            
+            <input type="text" id="kword" name="kword" placeholder="palabra clave">
+            <button type="submit">Buscar</button>
+        </form>
+
+        <ul>
+            {% for e in empleados %}
+                <li>{{ e}}---- {{ e.last_name}}</li>
+            {% endfor %}
+        </ul>
+</body>
+</html>
