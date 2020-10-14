@@ -1,10 +1,8 @@
 from django.contrib import admin
 from django.urls import path
-
-def desdeApps(self):
-    print('==================desde la app persona')
+from . import views  # con el . se indica que está en el mismo nivel de la carpeta
 
 
 urlpatterns = [
-    path('persona/', desdeApps ),
+    path('empleados/', views.ListaEmpleados.as_view() ),    
 ]
