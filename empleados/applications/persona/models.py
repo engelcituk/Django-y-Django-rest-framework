@@ -1,4 +1,5 @@
 from django.db import models
+from ckeditor.fields import RichTextField #importa ckeditor
 #importacion del modelo con que estará relacionado nuestra tabla de empleados
 from applications.departamento.models import Departamento
 
@@ -28,6 +29,7 @@ class Empleado(models.Model): # Modelo para la tabla empleado.
     departamento = models.ForeignKey(Departamento, on_delete=models.CASCADE) #columna de relacion con la tabla Departamento, relacion de 1 a muchos
     #avatar = models.ImageField(upload_to='empleado', blank=True, null=True)
     habilidades = models.ManyToManyField(Habilidades)
+    hoja_vida = RichTextField() 
 
     class Meta:
         verbose_name = 'Mi empleado'
