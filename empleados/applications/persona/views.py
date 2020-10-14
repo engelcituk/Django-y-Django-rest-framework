@@ -5,6 +5,7 @@ from .models import Empleado
 
 class ListaEmpleados(ListView):
     template_name = "empleado/lista.html"
+    paginate_by = 4 #paginacion, en la url se pondría por get los sig ?page=3
     model = Empleado 
     context_object_name = 'empleados' 
 
