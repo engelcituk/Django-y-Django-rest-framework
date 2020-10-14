@@ -24,7 +24,7 @@ class EmpleadoAmin(admin.ModelAdmin):
         return obj.first_name + ' ' + obj.last_name
 
     #list_filter-> para agregar un filtro, en la tabla
-    list_filter = ('job','habilidades',)
+    list_filter = ('departamento','job','habilidades',)
     #filter_horizontal-> filtro horizontal, que sirve para los campos de relacion muchos a muchos, al registrar un empleado
     filter_horizontal = ('habilidades',)
 

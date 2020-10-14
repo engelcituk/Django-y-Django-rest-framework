@@ -5,7 +5,15 @@ from .models import Empleado
 
 class ListaEmpleados(ListView):
     template_name = "empleado/lista.html"
-    model = Empleado #para asignarle un nombre de variable al queryset que se pasaran al template
-    context_object_name = 'empleados' #para asignarle un nombre de variable al queryset que se pasaran al template
+    model = Empleado 
+    context_object_name = 'empleados' 
+
+class ListaEmpleadosPorArea(ListView):
+    template_name = "empleado/listaPorArea.html"
+    model = Empleado 
+    queryset = Empleado.objects.filter(
+        departamento__shor_name = 'TICS' 
+    )
+    context_object_name = 'empleados' 
 
 

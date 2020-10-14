@@ -6,10 +6,9 @@
     <title>Prueba de list view</title>
 </head>
 <body>
-    <!-- interpolamos los datos recibidos desde la vista con llaves  -->
-    
+<h1>Lista de empleados por departamento</h1>    
     {% for e in empleados %}
-        <li>{{ e}}</li>
+        <li>{{ e}}---- {{ e.last_name}}</li>
     {% endfor %}
         
 </body>
