@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de list view</title>
+</head>
+<body>
+    <!-- interpolamos los datos recibidos desde la vista con llaves  -->
+    
+    <h1>Detalle de un empleado</h1>
+    
+    {{object}} <!-- Para recuperar todo el objeto o registro del detalle del empleado -->
+    <hr> 
+    {{empleado}} <!-- Para recuperar los datos  a detalle del empleado, especificar el modelo pero en minuscula-->
+
+    <hr>
+    <p>{{empleado.first_name}}</p>
+    <p>{{empleado.last_name}}</p>
+    <p>{{empleado.job}}</p>
+    <p>{{empleado.departamento}}</p>
+    
+        
+</body>
+</html>
+

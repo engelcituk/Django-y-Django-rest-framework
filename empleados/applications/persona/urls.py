@@ -8,6 +8,7 @@ urlpatterns = [
     path('empleadosporarea/<area>', views.ListaEmpleadosPorArea.as_view() ),    
     path('empleadosporkword/', views.ListaEmpleadosPorKword.as_view() ),    
     path('empleadosporhabilidades/', views.ListaHabilidadesEpleado.as_view() ),    
+    path('empleado/<pk>', views.EmpleadodetailView.as_view() ), #pk hace referencia al id del empleado   
 
 
 ]

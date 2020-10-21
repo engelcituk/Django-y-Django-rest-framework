@@ -1,8 +1,9 @@
 from django.shortcuts import render
-from django.views.generic import (ListView, TemplateView, CreateView) 
+from django.views.generic import (ListView, DetailView) 
 #importo el modelo empleado
 from .models import Empleado
 
+#vistas basadas en clases
 class ListaEmpleados(ListView):
     template_name = "empleado/lista.html"
     paginate_by = 4 #paginacion, en la url se pondría por get los sig ?page=3
@@ -47,5 +48,10 @@ class ListaHabilidadesEpleado(ListView):
     def get_queryset(self):
         empleado = Empleado.objects.get( id=8 )  
         return empleado.habilidades.all()
+
+
+class EmpleadodetailView(DetailView):
+    model = Empleado
+    template_name = "empleado/detalle.html"
 
 
