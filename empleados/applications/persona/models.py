@@ -28,7 +28,7 @@ class Empleado(models.Model): # Modelo para la tabla empleado.
     job = models.CharField('Trabajo', max_length=50, choices=job_choices) 
     departamento = models.ForeignKey(Departamento, on_delete=models.CASCADE) #columna de relacion con la tabla Departamento, relacion de 1 a muchos
     #avatar = models.ImageField(upload_to='empleado', blank=True, null=True)
-    habilidades = models.ManyToManyField(Habilidades)
+    habilidades = models.ManyToManyField(Habilidades)# un empleado tiene muchas habilidades y una habilidad le puede pertenecer a muchos empleados
     hoja_vida = RichTextField() 
 
     class Meta:

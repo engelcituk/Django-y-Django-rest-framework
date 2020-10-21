@@ -8,6 +8,7 @@ admin.site.register(Habilidades)
 class EmpleadoAmin(admin.ModelAdmin):
     #list_display -> columnas a mostrar del modelo    
     list_display = (
+        'id',
         'first_name',
         'last_name',
         'departamento',

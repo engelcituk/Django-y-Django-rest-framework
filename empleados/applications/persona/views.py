@@ -38,4 +38,14 @@ class ListaEmpleadosPorKword(ListView):
         lista = Empleado.objects.filter(
             first_name = keyword 
         )
-        return lista       
+        return lista   
+
+class ListaHabilidadesEpleado(ListView):
+    template_name = "empleado/listaPorHabilidades.html"
+    context_object_name = 'habilidades'
+
+    def get_queryset(self):
+        empleado = Empleado.objects.get( id=8 )  
+        return empleado.habilidades.all()
+
+
