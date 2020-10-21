@@ -115,3 +115,9 @@ Para lograr conectar desde django a Postgress
 empleado
 cituk
 djangoapp
+
+
+Para instalar una app de terceros como por ejemplo ckeditor
+	
+	pip install django-ckeditor
+
