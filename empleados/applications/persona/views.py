@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import (ListView, DetailView) 
+from django.views.generic import (ListView, DetailView, CreateView) 
 #importo el modelo empleado
 from .models import Empleado
 
@@ -58,3 +58,8 @@ class EmpleadodetailView(DetailView):
         context = super(EmpleadodetailView, self).get_context_data(**kwargs)
         context['titulo'] = 'Empleado del mes'
         return context
+
+
+class EmpleadoCreateView(CreateView):
+    model = Empleado
+    template_name = "empleado/add.html"
