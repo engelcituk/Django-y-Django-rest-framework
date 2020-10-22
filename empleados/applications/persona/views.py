@@ -54,4 +54,7 @@ class EmpleadodetailView(DetailView):
     model = Empleado
     template_name = "empleado/detalle.html"
 
-
+    def get_context_data(self, **kwargs):
+        context = super(EmpleadodetailView, self).get_context_data(**kwargs)
+        context['titulo'] = 'Empleado del mes'
+        return context
