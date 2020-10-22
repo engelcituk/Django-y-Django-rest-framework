@@ -13,7 +13,7 @@ from django.utils import timezone
 from django.views.generic import ListView, DetailView, View
 
 from .forms import CheckoutForm, CouponForm, RefundForm, PaymentForm
-from .models import Item, OrderItem, Order, Address, Payment, Coupon, Refund, UserProfile
+from .models import Item, OrderItem, Order, Address, Payment, Coupon, Refund, UserProfile, Sum
 
 
 from django.http import HttpResponse
@@ -46,6 +46,7 @@ class CheckoutView(View):
     def get(self, *args, **kwargs):
         try:
             order = Order.objects.get(user=self.request.user, ordered=False)
+
             form = CheckoutForm()
             context = {
                 'form': form,
@@ -80,6 +81,7 @@ class CheckoutView(View):
         form = CheckoutForm(self.request.POST or None)
         try:
             order = Order.objects.get(user=self.request.user, ordered=False)
+            
             if form.is_valid():
 
                 use_default_shipping = form.cleaned_data.get(
@@ -201,11 +203,11 @@ class CheckoutView(View):
                 if payment_option == 'C':
 
                     subject = 'Compra realizada'
-                    template = get_template('templateCorreo.html')
-                    content = template.render({'order':order})
+                    template = get_template('email/templateCorreo.html')
+                    content = template.render({'order':order,'cliente':'John Doe','shipping_address':shipping_address, 'payment_option':'Cash' })
 
                     message = EmailMultiAlternatives(subject, 
-                                    'hola',
+                                    'Compra',
                                     'citukcaamal@gmail.com', 
                                     ['engelcituk@gmail.com']) 
 
@@ -216,12 +218,17 @@ class CheckoutView(View):
 
                 elif payment_option == 'T':
 
-                    subject, from_email, to = 'Compra realizada', 'citukcaamal@gmail.com', 'engelcituk@gmail.com'
-                    text_content = 'This is an important message.'
-                    html_content = '<p>This is an <strong>important</strong> message.</p>'
-                    msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
-                    msg.attach_alternative(html_content, "text/html")
-                    msg.send()
+                    subject = 'Compra realizada'
+                    template = get_template('email/templateCorreo.html')
+                    content = template.render({'order':order,'cliente':'John Doe','shipping_address':shipping_address, 'payment_option':'Tarjeta' })
+
+                    message = EmailMultiAlternatives(subject, 
+                                    'Compra',
+                                    'citukcaamal@gmail.com', 
+                                    ['engelcituk@gmail.com']) 
+
+                    message.attach_alternative(content, 'text/html')
+                    message.send()
 
                     return redirect('core:payment', payment_option='tarjeta') 
 

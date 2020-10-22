@@ -1,0 +1,507 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Sihot - Go </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <style type="text/css">
+
+    *{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+        body {
+            -webkit-text-size-adjust: 100% !important;
+            -ms-text-size-adjust: 100% !important;
+            -webkit-font-smoothing: antialiased !important;
+        }
+
+        img {
+            border: 0 !important;
+            outline: none !important;
+        }
+
+        p {
+            margin: 0px !important;
+            margin:0 0 4px 0 !important;
+            line-height: 24px;
+            font-size: 18px;   
+        }
+
+        .w400{
+            font-weight: 400;
+        }
+        
+        .w600{
+            font-weight: 600;
+        }
+        .background-h{
+            background-color: #000;
+            color: #fff;
+            padding: 4px 0px 4px 0px;
+            margin-bottom: 0;
+
+        }
+        
+        .background-h-green{
+            background-color: #28B4D1;
+            color: #fff;
+            padding: 4px 0px 4px 0px;
+            margin-bottom: 0;
+
+        }
+        .background-h-red{
+            background-color: #E94253;
+            color: #fff;
+            padding: 4px 0px 4px 0px;
+            margin-bottom: 0;
+
+        }
+
+
+        table {
+            border-collapse: collapse;
+            mso-table-lspace: 0px;
+            mso-table-rspace: 0px;
+        }
+
+        td,
+        a,
+        span {
+            border-collapse: collapse;
+            mso-line-height-rule: exactly;
+        }
+
+        span.MsoHyperlink {
+            mso-style-priority: 99;
+            color: inherit;
+        }
+
+        span.MsoHyperlinkFollowed {
+            mso-style-priority: 99;
+            color: inherit;
+        }
+
+        .ExternalClass * {
+            line-height: 100%;
+        }
+
+        .white a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        sup {
+            vertical-align: baseline;
+            position: relative;
+            top: -0.6em;
+            font-size: 1px;
+        }
+        li {
+            margin: 0 0 4px 0;
+            font-weight: 600;
+            font-size: 16px;
+
+        }
+        img.middle_img {
+                width: 50% !important;
+                height: auto !important;
+                max-width: 50% !important;
+        }
+
+        img.w_40 {
+                width: 40% !important;
+                height: auto !important;
+                max-width: 40% !important;
+        }
+
+
+        img.w_70 {
+            width: 70% !important;
+            height: auto !important;
+            max-width: 70% !important;
+        }
+
+        .btn-check-in{
+            background-color: #231F20;
+            color: #f8f9fa!important;
+            font-weight: 700!important;
+            vertical-align: middle;
+            text-align: center;
+            display: inline-block;
+            font-size: 26px;
+            text-decoration: none;
+            padding: .5rem 1rem;
+            line-height: 1.5;
+            border-radius: .3rem;
+            border-top-left-radius: 0.3rem;
+            border-top-right-radius: 0.3rem;
+            border-bottom-right-radius: 0.3rem;
+            border-bottom-left-radius: 0.3rem;
+        }
+
+        @media only screen and (max-width:480px) {
+            table.wrapper {
+                width: 100% !important;
+            }
+
+            table.main_table {
+                width: 100% !important;
+                min-width: 100% !important;
+            }
+
+            td.hide,
+            table.hide,
+            span.hide,
+            br.hide {
+                display: none !important;
+            }
+
+            td.align_cent {
+                text-align: center !important;
+            }
+
+            img.full_img {
+                width: 100% !important;
+                height: auto !important;
+                max-width: 100% !important;
+            }
+
+            img.middle_img {
+                width: 100% !important;
+                height: auto !important;
+                max-width: 100% !important;
+            }
+
+            td.height15 {
+                height: 15px !important;
+            }
+
+            td.height25 {
+                height: 25px !important;
+            }
+
+            td.width15 {
+                width: 15px !important;
+            }
+
+            td.font {
+                font-size: 24px !important;
+                line-height: 27px !important;
+            }
+
+            td.pad {
+                padding-left: 8px !important;
+                padding-right: 8px !important;
+            }
+
+            td.pad_20 {
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+            }
+
+            td.padtop {
+                padding-top: 20px !important;
+            }
+
+            table.w_284 {
+                width: 284px !important;
+            }
+
+            td.w_32 {
+                width: 32px !important;
+            }
+
+            img.w_32 {
+                width: 32px !important;
+                height: auto !important;
+            }
+
+            td.show,
+            div.show {
+                display: block !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                overflow: visible !important;
+                visibility: visible !important;
+                width: auto !important;
+                height: auto !important;
+                max-height: none !important;
+                line-height: 100% !important;
+                font-size: 12px !important;
+            }
+        }
+
+        @media only screen and (min-width:481px) and (max-width:599px) {
+            table.wrapper {
+                width: 100% !important;
+            }
+
+            table.main_table {
+                width: 480px !important;
+                min-width: 480px !important;
+            }
+
+            td.hide,
+            table.hide,
+            span.hide,
+            br.hide {
+                display: none !important;
+            }
+
+            td.align_cent {
+                text-align: center !important;
+            }
+
+            img.full_img {
+                width: 100% !important;
+                height: auto !important;
+                max-width: 100% !important;
+            }
+
+            td.height25 {
+                height: 25px !important;
+            }
+
+            td.height15 {
+                height: 15px !important;
+            }
+
+            td.width15 {
+                width: 15px !important;
+            }
+
+            td.font {
+                font-size: 31px !important;
+                line-height: 34px !important;
+            }
+
+            td.pad {
+                padding-left: 8px !important;
+                padding-right: 8px !important;
+            }
+
+            td.padtop {
+                padding-top: 20px !important;
+            }
+
+            td.show,
+            div.show {
+                display: block !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                overflow: visible !important;
+                visibility: visible !important;
+                width: auto !important;
+                height: auto !important;
+                max-height: none !important;
+                line-height: 100% !important;
+                font-size: 12px !important;
+            }
+        }
+    </style>
+</head>
+
+<body style="margin:0px; padding:0px;">
+
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td valign="top" align="center" class="pad">
+                <table width="600"  border="0" cellspacing="0" cellpadding="0" align="center"
+                    style="table-layout:fixed;width:600px;min-width:600px;" class="main_table">
+                    <tr>
+                        <td valign="top">
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+                                <!-- TFB -->
+                                <tr>
+                                    <td>
+                                        <table width="600" border="0" cellspacing="0" cellpadding="0" align="left" class="wrapper">
+                                            <tr>
+                                                <td>
+                                                    <table width="100%" border="0"  cellspacing="0" cellpadding="0" align="center">
+                                                        <tr align="center">
+
+                                                            <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+                                                                <tr>
+
+                                                                    <td  width="20%">
+                                                                       
+                                                                    </td>
+
+                                                                    <td  width="60%" align="center">
+                                                                        <img class="" src="logo-tfhr-negro.jpg" alt="" width="250px"  style="display:block;" border="0" />
+                                                                    </td>
+
+                                                                    <td  width="20%">
+                                                                       
+                                                                    </td>
+
+                                                                </tr>
+                                                            </table>
+                                                        </tr>
+                                                        
+                                                        <tr>
+                                                            <td align="center">
+                                                                <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+                                                                    <tr>
+                                                                        <td height="30" class="height15" style="font-size:1px; line-height:1px;">Â </td>
+                                                                    </tr>
+                                                                    <tr align="center">
+                                                                        <td class="module-subtitle" valign="middle">
+                                                                            <p class="w400">Estimado <span class="w600">{{cliente}}</span> <br/>muchas gracias por la compra realizada</p>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        
+
+                                                        <tr>
+                                                            <td height="10" class="height15" style="font-size:1px; line-height:1px;">Â </td>
+                                                        </tr>
+ 
+                                                        
+                                                        <tr>
+                                                            <td><hr style="border-top: 1px solid rgba(0,0,0,.1);"></td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td height="10" class="height15" style="font-size:1px; line-height:1px;">Â </td>
+                                                        </tr>
+                                                          
+                                                        <tr align="center"  bgcolor="#F2F2F2">
+                                                            <td valign="middle">
+                                                                <h2 class="w400">A continuación la información de su compra:</h2>
+                                                            </td>
+                                                        </tr>
+                                                        
+                                                        <tr>
+                                                            <td height="40" class="height15" style="font-size:1px; line-height:1px;">Â </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td align="center">
+                                                                <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+                                                                    <tr>
+                                                                        <td  width="50%">
+                                                                            <p class="w600">Nombre del cliente:</p>
+                                                                        </td>
+
+                                                                        <td  width="50%">
+                                                                            <p class="w400">{{cliente}}</p>
+                                                                            
+
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td  width="50%">
+                                                                            <p class="w600">País:</p>
+                                                                        </td>
+
+                                                                        <td  width="50%">
+                                                                            <p class="w400">{{shipping_address.street_address}}</p>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+
+                                                                        <td  width="50%">
+                                                                            <p class="w600">Su dirección:</p>
+                                                                        </td>
+
+                                                                        <td  width="50%">
+                                                                            <p class="w400">{{shipping_address.apartment_address}}</p>
+                                                                        </td>
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td  width="50%">
+                                                                            <p class="w600">CP:</p>
+                                                                        </td>
+
+                                                                        <td  width="50%">
+                                                                            <p class="w400">{{shipping_address.zip}}</p>
+                                                                        </td>
+                                                                    </tr>                                                            
+                                                                    
+                                                                </table>
+
+                                                                <table width="100%" border="1" cellspacing="0" cellpadding="0" align="center">
+                                                                    <tr bgcolor="#F2F2F2">
+                                                                        <th  width="68%">
+                                                                            <p class="w600">producto:</p>
+                                                                        </th>
+                                                                        <th  width="12%">
+                                                                            <p class="w600">Catidad</p>
+                                                                        </th>
+                                                                        <th  width="20%">
+                                                                            <p class="w600">Subtotal</p>
+                                                                        </th>
+                                                                    </tr>                 
+                                                                    {% for order_item in order.items.all %}
+                                                                        <tr >
+                                                                            <th  width="68%">
+                                                                                <p class="w600">{{ order_item.item.title}}</p>
+                                                                                <p class="w400">{{ order_item.item.description}}</p>
+                                                                            </th>
+                                                                            <th  width="12%">
+                                                                                <p class="w400">{{ order_item.quantity }}</p>
+                                                                            </th>
+                                                                            <th  width="20%">
+                                                                                <p class="w400">${{ order_item.get_final_price }}</p>
+                                                                            </th>
+                                                                        </tr>
+                                                                    {% endfor %}
+                                                                </table>
+                                                                
+                                                                <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+                                                                    <tr>
+                                                                        <td  width="50%">
+                                                                            <p class="w600">Pago con:</p>
+                                                                        </td>
+
+                                                                        <td  width="50%">
+                                                                            <p class="w400">{{payment_option}}</p>
+                                                                        </td>
+                                                                    </tr>
+
+                                                                    <tr>
+                                                                        <td  width="50%">
+                                                                            <p class="w600">Total:</p>
+                                                                        </td>
+
+                                                                        <td  width="50%">
+                                                                            <p class="w600">${{ order.get_total }}</p>
+                                                                        </td>
+                                                                    </tr>
+                                                                    
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                                                                                                                                                                                               
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <!--TFH END -->
+
+                                <tr>
+                                    <td height="30" class="hide"
+                                        style="line-height:30px;font-size:1px;border-bottom: 2px solid #cdcdcd;">Â 
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
