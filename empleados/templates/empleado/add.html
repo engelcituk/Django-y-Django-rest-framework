@@ -9,7 +9,12 @@
 
     <h1>Crear empleado</h1>
     <!-- mostrará los campos indicados en fields que corresponden a atributos del modelo-->
-    {{ form }}
+
+    <form action="POST">
+        {% csrf_token %}
+        {{ form.as_p}}
+        <button type="submit">Enviar</button>
+    </form>
     
 </body>
 </html>

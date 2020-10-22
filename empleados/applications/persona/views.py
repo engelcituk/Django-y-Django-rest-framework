@@ -65,3 +65,4 @@ class EmpleadoCreateView(CreateView): #necesita siempre del parametro fields
     template_name = "empleado/add.html"
     #fields = ['first_name','last_name', 'job']   
     fields = ('__all__') #trae todos los campos del modelo empleado
+    success_url = '.' 
