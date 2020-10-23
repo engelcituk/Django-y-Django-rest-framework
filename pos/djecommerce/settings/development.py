@@ -49,6 +49,14 @@ STRIPE_SECRET_KEY = config('STRIPE_TEST_SECRET_KEY')
 
 # Email settings
 EMAIL_HOST = 'smtp.mailtrap.io'
+EMAIL_PORT = '2525'
 EMAIL_HOST_USER = '8ebffee91228d3'
 EMAIL_HOST_PASSWORD = '95dbf6bb50c42b'
-EMAIL_PORT = '2525'
+
+"""
+EMAIL_HOST = 'smtp.googlemail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'hjgjghjh'
+EMAIL_HOST_PASSWORD = 'fhfhfh'
+EMAIL_USE_TLS = True
+"""

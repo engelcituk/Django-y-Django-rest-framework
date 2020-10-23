@@ -8,6 +8,11 @@ activamos ese entorno-> en la terminal e ir poniendo lo siguiente
 	cd Scripts
 	activate
 
+	en linux se activa con 
+	
+	source agenda/bin/activate
+
+
 cuando se activa el entorno se puede usar el gestor de paquetes, en este caso el gestor llamado pip, nos ubicamos en
 la raiz, para instalar django en nuestro entorno virtual, tipeamos
 
@@ -120,4 +125,13 @@ djangoapp
 Para instalar una app de terceros como por ejemplo ckeditor
 	
 	pip install django-ckeditor
+
+al usar psycopg2-binary==2.8.5 en linux o mac 
+en windows solo es psycopg2==2.8.5 sin el binary
+
+y en windows no sería necesario pkg-resources==0.0.0, borrarlo 
+
+
+para peticiones rest
+	pip install Django requests
 
